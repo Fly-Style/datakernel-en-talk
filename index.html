@@ -15,7 +15,7 @@
         .slide {
             font-family: "Lato", "Medium";
             background: #fff3e5;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
         }
 
         .slide code {
@@ -44,7 +44,7 @@
 
 <body class="shower list">
     <header class="caption">
-        <h1>Shower Presentation Engine</h1>
+        <h1>DataKernel. Rules.</h1>
     </header>
 
     <section class="slide" id="cover">
@@ -227,9 +227,37 @@
         <figure>
             <h2>Dependency Injection</h2>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li class="next">Да-да, у нас есть своё внедрение зависимостей!</li>
+                <li class="next">Работает перед стартом работы приложения (startup time)</li>
+                <li class="next">Крайне шустро&#x301; : использует уже "запеченые" объекты</li>
+                <li class="next">Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
+                <li class="next">Предоставляется отдельным модулем без зависимостей</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- DI BENCHMARKS -->
+    <section class="slide">
+        <figure>
+            <h2>Dependency Injection</h2>
+            <br>
+            <div class="next" align="center">
+                <p><code>DataKernelDI      : 287.240 ± 10.404  ns/op</code></p>
+                <p><code>GuiceDiBenchmark  : 750.395 ± 58.030  ns/op</code></p>
+                <p><code>SpringDiBenchmark : 75629.3 ± 571.223 ns/op</code></p>
+            </div>
+        </figure>
+    </section>
+
+    <!-- LAUNCHER -->
+    <section class="slide">
+        <figure>
+            <h2>Launcher</h2>
+            <ul>
+                <li>Технология, которая избавила нас от серверов приложений</li>
+                <li class="next">Умная надстройка над <b> main </b> методом</li>
+                <li class="next">Проводит много манипуляций с помощью DI, стартует все вложенные сервисы, логгирует</li>
+                <li class="next">Он же обеспечивает и производит и остановку приложения.</li>
             </ul>
         </figure>
     </section>
@@ -238,18 +266,6 @@
     <section class="slide">
         <figure>
             <h2>Service Graph</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </figure>
-    </section>
-
-    <!-- LAUNCHER -->
-    <section class="slide">
-        <figure>
-            <h2>Launcher</h2>
             <ul>
                 <li></li>
                 <li></li>
