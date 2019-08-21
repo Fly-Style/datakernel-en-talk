@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Shower Presentation Engine</title>
     <meta charset="utf-8">
@@ -8,57 +9,61 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
     <style>
         .shower {
-            --slide-ratio: calc(4 / 3);
+            --slide-ratio: calc(16 / 9);
         }
+
         .slide {
-            background : #fff3e5;
-	    font-size: 1.2em;
+            font-family: "Lato", "Medium";
+            background: #fff3e5;
+            font-size: 1.7rem;
         }
+
         .slide code {
-            font-family: "Fira Code", monospace
+            font-family: "Fira Code", "Retina", monospace;
+            font-size: 1.5rem;
         }
+
+        .slide #worker {
+            font-family: "mononoki", "Regular", monospace;
+            font-size: 1.25rem;
+        }
+
         .slide blockquote {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
+
         #telegram {
             font-family: "Fira Code", "Retina", monospace
         }
+
         #announcement {
             font-size: 5rem;
         }
     </style>
 </head>
-<body class="shower list">   
+
+<body class="shower list">
     <header class="caption">
         <h1>Shower Presentation Engine</h1>
     </header>
-    
-    <section class="slide" id="cover">
-        <h2>Bulk Memory Operations</h2>
-        <h2>Implementation in</h2>
-	<h2>WebAssembly</h2>
-        <br>
-	<br>
-        <p>Роботу виконав : Сиротенко Олександр Романович</p>
-	<p>Науковий керівник : кандидат технiчних наук Демківський Є.О.</p>
-        <!--<figure>
-            <img class="cover" src="pictures/cover_.jpg" alt="Hands on the orange typewriter in a park">
-        </figure>
-	-->
-        <style>
 
+    <section class="slide" id="cover">
+        <br>
+        <h2>В поисках</h2>
+        <h2>асинхронного счастья</h2>
+        <style>
             #cover h2 {
                 margin: 30px 0 0;
                 text-align: center;
-                font-size: 72px;
+                font-size: 96px;
             }
-	    
+
             #cover p {
                 margin: 10px 0 0;
                 text-align: center;
                 /* color: white; */
                 font-style: italic;
-                font-size: 28px;
+                font-size: 24px;
             }
 
             #cover p a {
@@ -67,178 +72,210 @@
         </style>
     </section>
 
-    <!-- ABSTRACT MACHINE -->
     <section class="slide">
         <figure>
-            <h2>Мета роботи</h2>
+            <h2>О себе : Александр Сиротенко</h2>
             <br>
-	    <p style="font-size: 2.25rem; text-align:center;">Дизайн та розробка підтримки так званих "масивних" операцій над пам'яттю у WebAssembly.</p>
+            <ul>
+                <li>Software Engineer <b>@datakernel.io</b></li>
+                <li>Разрабатываем фреймворк DataKernel.</li>
+                <li>&#128525; опенсорс.</li>
+                <li>Увлекаюсь (пишу) компиляторами/рантаймами и low-lewel at al.</li>
+            </ul>
         </figure>
     </section>
 
     <section class="slide">
         <figure>
-            <h2>Проблематика</h2>
+            <h2>Safe Harbour</h2>
             <br>
-	    <ul>
-	      <li style="font-size: 2.25rem;">Продуктивність сучасних веб-застосунків.</li>
-	      <br>
-	      <li style="font-size: 2.25rem;">Відносно мала швидкість обробки великих даних.</li>
-	      <br>
-	      <li style="font-size: 2.25rem;">Велика кількість атомарних викликів запису.</li>
-	      <br>
-	      <li style="font-size: 2.25rem;">Запис у пам'ять набагато дорожчий, ніж читання.</li>
-	    </ul>
+            <p align="center">Всё, о чем я буду сейчас рассказывать, может ещё поменяться.</p>
+            <p align="center" class="next">В лучшую сторону, уверен ;)</p>
         </figure>
     </section>
-    
-    <!-- ABSTRACT -->
+
+    <section class="slide">
+        <figure>
+            <h2>Модели многозадачности</h2>
+            <ul>
+                <li>Concurrency : потоки и их синхронизация</li>
+                <li class="next">Параллелизм (ФП) : потоки в ленивых языках</li>
+                <li class="next">Модель акторов : акторы, кидющиеся <strike>какаш..</strike> сообщениями</li>
+                <li class="next">Асинхронное : callbacks, promises/futures, сопрограммы</li>
+                <li class="next">Реактивное : Observables. Эксель, короче говоря.</li>
+            </ul>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <h2>Боль выделена жирным</h2>
+            <ul>
+                <li>Concurrency : потоки и их <b>синхронизация</b></li>
+                <li>Параллелизм (ФП) : потоки в <b>ленивых языках</b></li>
+                <li>Модель акторов : акторы, <b>кидющиеся</b> <strike>какаш..</strike> <b>сообщениями</b></li>
+                <li>Асинхронное : <b>callbacks</b>, <b>promises/futures</b>, сопрограммы</li>
+                <li>Реактивное : <b>Observables</b>. Эксель, короче говоря.</li>
+            </ul>
+        </figure>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 style="font-size: 2.25rem;">Кривая имени Ш.</h2>
+        <figure>
+            <img src="pictures/curve_sh.png" alt="Shipilёv Curve"
+                style="margin-left:5rem; width: 600px; height: 450px;">
+        </figure>
+    </section>
+
+    <!-- DATAKERNEL -->
     <section class="slide" id="chapter">
-       <h2 class="shout shrink">WebAssembly</h2>
+        <h2 class="shout shrink">DataKernel</h2>
     </section>
 
-    <!-- ABSTRACT MACHINE -->
+    <!-- OVERALL -->
     <section class="slide">
         <figure>
-            <br>
-            <br>
-            <br>
-            <blockquote>
-              <p>WebAssembly — це бінарний формат інструкцій для стекової віртуальної машини.</p>
-            </blockquote>
+            <h2>Ключевые особенности архитектуры</h2>
+            <ul>
+                <li>Хорошо разбит на модули без лишних зависимостей</li>
+                <li class="next">Полностью асинхронный (на манер Node.js)</li>
+                <li class="next">Максимизация работы в рамках одного потока</li>
+                <li class="next">Быстрое внедрение зависимостей и запуск приложений</li>
+                <li class="next">Низкий порог входа</li>
+            </ul>
         </figure>
     </section>
-    
-    <!-- ABSTRACT MACHINE SPECIFICATIONS -->
-    <section class="slide">
-        <h2>Докладніше</h2>
-        <br>
-        <ul>
-          <li>Спроектований як переносиме AS-дерево.</li>
-	  <br>
-          <li>Має два проміжні представлення. </li>
-	  <br>
-          <li>Декларується <b>швидке</b> та <b>безпечне</b> виконання коду.</li>
-	  <br>
-          <li>Кросплатформенний та відкритий <a href="https://www.w3.org/TR/wasm-core-1/">стандарт</a>. [1]</li>
-        </ul>
-    </section>
 
-    <section class="slide">
-      <h2>Масивні операції над пам'яттю </h2>
-	<h3>Лінійний та швидкий запис великої кількості байт.</h3>
-	<br>
-	<code> memset (*ptr, int value, size_t num); </code>
-	<br>
-	<br>
-	<code> memcpy (*dest, const *src, size_t num);</code>
-    </section>
-
-    <section class="slide">
-        <h2>... у WebAssembly</h2>
-        <br>
-	<br>
-        <ul>
-            <li>Специфікація WebAssembly <b><i>поки що</i></b> не визначає наявність масивних операцій.</li> 
-	    <li>Iснує офіційна
-	      <a href="https://github.com/WebAssembly/bulk-memory-operations/blob/master/proposals/bulk-memory-operations/Overview.md"> пропозиція</a>
-	      додати такі операції у стандарт. [2]</li>
-	    <li>Автор роботи є одним із розробників цієї пропозиції 😊</li>
-	    <li>Цільова віртуальна машина - <b>ChakraCore</b> від компанії Microsoft. </li>
-	</ul>
-    </section>
-
-    <section class="slide">
-      <h2>Очікуваний результат</h2>
-      <br>
-        <ul>
-          <li>Підтримка швидких операцій над лінійною пам'яттю :
-	    <br>
-	    <code>memory.copy</code> , 
-	    <code>memory.fill</code> , 
-	    <code>memory.init</code>
-	  </li>
-	  <br>
-	   <li>Підтримка швидких операцій над таблицею вказівників : 
-	    <br>
-	    <code>table.copy</code> ,
-	    <code>table.init</code>
-	   </li>
-	   <br>
-	   <li>Пасивної преініціалізації сегментів пам'яті.</li>
-	</ul>
-    </section>
-
+    <!-- DATAKERNEL COMPONENTS -->
     <section class="slide" id="chapter">
-      <h2 class="shout shrink">Деталі реалізації</h2>
+        <h2 class="shout shrink">Core Components</h2>
     </section>
 
-      <section class="slide">
-        <h2>Загальне</h2>
-        <br>
-	<br>
-        <ul>
-          <li>Включити ключові слова в лексер, токени в парсер ☑️</li>
-	  <li>Включити коди операцій для бінарного представлення ☑️</li>
-	  <li>Генерувати нові intrinsic - інструкції для JIT-компілятора ☑️</li>
-	  <li>Забезпечити перехоплення виключень 🔜</li>
-	  <li>Використання транзакційної пам'яті  🔜</li>
-	</ul>
-    </section>
-    
+    <!-- PROMISES -->
     <section class="slide">
-        <h2>Як обирався алгоритм пришвидшеного запису (1)</h2>
-        <br>
-	<br>
-        <ul>
-          <li>ChakraCore вже має реалізацію таких операцій для JavaScript.</li>
-	  <br>
-	  <li><b>Проблема</b> : немає підтримки обробки пасток OC (trap). </li>
-	</ul>
-    </section>
-
-    <section class="slide">
-        <h2>Як обирався алгоритм пришвидшеного запису (2)</h2>
-        <br>
-        <ul>
-          <li>Перевіряємо необхідні умови : чи вдосталь пам'яті, чи доступна зараз пам'ять, звідки ми хочемо прочитати.</li>
-	  <br>
-	  <li>Побайтово копіюємо в пам'ять призначення по вказівнику.</li>
-	  <br>
-	  <li>Якщо трапляється помилка, передаємо її обробнику віртуальної машини.</li>
-	</ul>
-    </section>
-
-    <section class="slide">
-        <h2>Як обирався алгоритм пришвидшеного запису (3)</h2>
-	<br>
-        <ul>
-	  <li>Оптимізація, яка дозволяє минати загрузку значень у кеш.</li>
-	  <br>
-          <li>Додаткова перевірка на кратність кількості байт для запису до 128/256/512.</li>
-	  <br>
-	  <li>Якщо так, то використовуємо інструкції <code><a href="https://www.felixcloutier.com/x86/movaps">movaps</a> / <a href="https://www.felixcloutier.com/x86/movntps">movntps</a></code>  із набору SSE (SIMD).</li>
-	</ul>
-    </section>
-
-    <section class="slide" style="padding-left: 50px;" >
-	<figure>
-            <img style="width: 900px; height: 700px;" src="pictures/a.jpg">
+        <figure>
+            <h2>Promise</h2>
+            <ul>
+                <li>Лёгкая обёртка над результатом асинхронного вычисления</li>
+                <li class="next">Задизайнены для работы с однопоточным event loop.</li>
+                <li class="next">Совместимы с <code>java.util.concurrent.CompletableFuture</code></li>
+            </ul>
+            <div class="next" align="center">
+                <p><code>oneCallMeasure : 12.736 ± 0.980 ns/op</code></p>
+                <p><code>combineMeasure : 27.590 ± 0.829 ns/op</code></p>
+            </div>
         </figure>
     </section>
-    
+
+    <!-- EVENTLOOP -->
+    <section class="slide">
+        <figure>
+            <h2>Event Loop</h2>
+            <ul>
+                <li>Менеджер асинхронных операций с очередью задач</li>
+                <li class="next">Сидит на одном потоке и максимизирует пользование только одного ядра.</li>
+                <li class="next">"Дружит" с GC : переиспользует массивы и байтбуфера</li>
+                <li class="next">Доступны и блокирующие операции (но лучше не надо)</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- WORKER POOL -->
+    <section class="slide">
+        <figure>
+            <h2>Worker Pool</h2>
+            <ul>
+                <li>Event Loop-ом ли единым в наших приложениях?</li>
+                <li class="next">Приложение на DataKernel работает с <b>множеством</b> циклов событий!</li>
+                <li class="next">Для эффективной работы таких приложений используется внедрение зависимостей</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- WORKER POOL PIC -->
+    <section class="slide">
+        <h2>Worker Pool</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/workerpool.svg">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- WORKER POOL CODE -->
+    <section class="slide">
+        <h2>Worker Pool</h2>
+        <figure>
+            <pre>
+                <code id="worker"><font color="##7B68EE">@Provides</font></code>
+                <code id="worker"><font color="##7B68EE">WorkerPool</font> workerPool(<font color="##7B68EE">WorkerPools</font> workerPools) { </code>
+                <code id="worker">   <font color="#BA55D3">return</font> workerPools.createPool(4);</code>
+                <code id="worker">}</code>
+                <code id="worker"><font color="##7B68EE">@Provides</font></code>
+                <code id="worker"><font color="##7B68EE">@Worker</font></code>
+                <code id="worker"><font color="##7B68EE">String</font> string(<font color="##7B68EE">@WorkerId</font> <font color="##7B68EE">int</font> workerId) {</code>
+                <code id="worker">   <font color="#BA55D3">return</font> <font color="#6B8E23">"Hello from worker #"</font> + workerId;</code>
+                <code id="worker">}</code>
+                </code>
+            </pre>
+        </figure>
+    </section>
+
+    <!-- DI -->
+    <section class="slide">
+        <figure>
+            <h2>Dependency Injection</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH -->
+    <section class="slide">
+        <figure>
+            <h2>Service Graph</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- LAUNCHER -->
+    <section class="slide">
+        <figure>
+            <h2>Launcher</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </figure>
+    </section>
+
     <section class="slide" id="see-more">
         <h2 class="shout">
             <img src="pictures/twitter.png" alt="Telegram logo" style="width: 200px; height: 150px;">
             <div id="telegram">@FlyCreat1ve</div>
         </h2>
     </section>
-    
+
     <section class="slide" id="see-more">
         <h2 class="shout">
-          <p>Дякую за увагу!</p>
-	  <p>Питання?</p>
-	  
+            <img src="pictures/qr-code.png" alt="QR Code" style="width: 450px; height: 450px;">
+        </h2>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout">
+            <p>Спасибо за внимание!</p>
+            <p>Вопросы?</p>
+
         </h2>
         <style>
             #see-more h2 {
@@ -259,7 +296,8 @@
     <div class="progress"></div>
 
     <script src="shower/shower.min.js"></script>
-    <!-- Copyright © 2018 Alexander Syrotenko -->
+    <!-- Copyright © 2019 Alexander Syrotenko -->
 
 </body>
+
 </html>
