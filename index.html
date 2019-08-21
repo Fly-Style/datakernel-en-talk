@@ -25,7 +25,7 @@
 
         .slide #worker {
             font-family: "mononoki", "Regular", monospace;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
         }
 
         .slide blockquote {
@@ -80,9 +80,15 @@
                 <li>Software Engineer <b>@datakernel.io</b></li>
                 <li>Разрабатываем фреймворк DataKernel.</li>
                 <li>&#128525; опенсорс.</li>
-                <li>Увлекаюсь (пишу) компиляторами/рантаймами и low-lewel at al.</li>
+                <li>Увлекаюсь (пишу) компиляторами/рантаймами и вообще, low-level.</li>
             </ul>
         </figure>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout">
+            <img src="pictures/talk.svg" alt="QR Code" style="width: 400px; height: 400px;">
+        </h2>
     </section>
 
     <section class="slide">
@@ -120,11 +126,14 @@
         </figure>
     </section>
 
+    <!-- Shipilёv CURVE-->
     <section class="slide" id="see-more">
         <h2 style="font-size: 2.25rem;">Кривая имени Ш.</h2>
-        <figure>
-            <img src="pictures/curve_sh.png" alt="Shipilёv Curve"
-                style="margin-left:5rem; width: 600px; height: 450px;">
+        <figure class="next">
+            <a href="https://www.youtube.com/watch?v=p2b4JHESEOc">
+                <img src="pictures/curve_sh.png" alt="Shipilёv Curve"
+                    style="margin-left:5rem; width: 600px; height: 450px;">
+            </a>
         </figure>
     </section>
 
@@ -143,6 +152,22 @@
                 <li class="next">Максимизация работы в рамках одного потока</li>
                 <li class="next">Быстрое внедрение зависимостей и запуск приложений</li>
                 <li class="next">Низкий порог входа</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- HOW DOES IT WORKS -->
+    <section class="slide">
+        <figure>
+            <h2>Вкратце : как это работает</h2>
+            <ul>
+                <li>Приложение стартует с помощью модуля <b>Launcher</b></li>
+                <li class="next">Все зависимости при старте внедряются модулем <b>Service Graph</b></li>
+                <li class="next">Модуль <b>WorkerPool</b> обеспечит исполнение асинхронных задач </li>
+                <li class="next">Основной работяга в этой схеме - асинхронный примитив <b>Promise</b></li>
+                <li class="next">За годы работы были разработаны производительные и удобные
+                    HTTP, TCP, RPC, memcached сервера;</li>
+                <li class="next">Получился пригодный почти для всего фреймворк. Welcome!</li>
             </ul>
         </figure>
     </section>
@@ -188,7 +213,7 @@
             <ul>
                 <li>Event Loop-ом ли единым в наших приложениях?</li>
                 <li class="next">Приложение на DataKernel работает с <b>множеством</b> циклов событий!</li>
-                <li class="next">Для эффективной работы таких приложений используется внедрение зависимостей</li>
+                <li class="next">Для эффективной работы таких приложений используется <b>внедрение зависимостей</b></li>
             </ul>
         </figure>
     </section>
@@ -267,11 +292,17 @@
         <figure>
             <h2>Service Graph</h2>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Предназначен для использования в качестве средства для старта / стопа сервисов приложения в
+                    соответствии с графом зависимостей</li>
+                <li>Работает в сочетании с модулем <b>DI</b> в <b>Launcher</b></li>
+                <li>Обходит граф зависимостей in <b>postoder</b> way</li>
             </ul>
         </figure>
+    </section>
+
+    <!-- DATAKERNEL IN ACTION -->
+    <section class="slide" id="chapter">
+        <h2 class="shout shrink">DataKernel in Action</h2>
     </section>
 
     <section class="slide" id="see-more">
