@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<title>Welcome to DataKernel</title>
+
 <head>
-    <title>Shower Presentation Engine</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
@@ -12,8 +13,13 @@
             --slide-ratio: calc(16 / 9);
         }
 
+        @font-face {
+            font-family: "Lato";
+            src: url("Lato/Lato-Regular.ttf");
+        }
+
         .slide {
-            font-family: "Lato", "Medium";
+            font-family: "Lato";
             background: #fff3e5;
             font-size: 1.6rem;
         }
@@ -201,7 +207,7 @@
                 <li>Менеджер асинхронных операций с очередью задач</li>
                 <li class="next">Сидит на одном потоке и максимизирует пользование только одного ядра.</li>
                 <li class="next">"Дружит" с GC : переиспользует массивы и байтбуфера</li>
-                <li class="next">Доступны и блокирующие операции (но лучше не надо)</li>
+                <li class="next">Доступны и блокирующие операции <i>(но лучше не надо)</i></li>
             </ul>
         </figure>
     </section>
@@ -212,19 +218,9 @@
             <h2>Worker Pool</h2>
             <ul>
                 <li>Event Loop-ом ли единым в наших приложениях?</li>
-                <li class="next">Приложение на DataKernel работает с <b>множеством</b> циклов событий!</li>
+                <li class="next">Приложение на DK работает с <b>множеством</b> циклов событий!</li>
                 <li class="next">Для эффективной работы таких приложений используется <b>внедрение зависимостей</b></li>
             </ul>
-        </figure>
-    </section>
-
-    <!-- WORKER POOL PIC -->
-    <section class="slide">
-        <h2>Worker Pool</h2>
-        <figure align="center">
-            <picture>
-                <img src="pictures/workerpool.svg">
-            </picture>
         </figure>
     </section>
 
@@ -244,6 +240,16 @@
                 <code id="worker">}</code>
                 </code>
             </pre>
+        </figure>
+    </section>
+
+    <!-- WORKER POOL PIC -->
+    <section class="slide">
+        <h2>Worker Pool</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/workerpool.svg">
+            </picture>
         </figure>
     </section>
 
@@ -303,6 +309,90 @@
     <!-- DATAKERNEL IN ACTION -->
     <section class="slide" id="chapter">
         <h2 class="shout shrink">DataKernel in Action</h2>
+    </section>
+
+    <!-- RPC -->
+    <section class="slide">
+        <figure>
+            <h2>RPC</h2>
+            <ul>
+                <li>Написаны готовые решения c помощью RPC</li>
+                <li class="next">Поддерживается много вкусных стратегий отправки</li>
+                <li class="next"><b>Шардирование</b> и оптимизированный <b>rendezvous hashing</b></li>
+                <li class="next">На отдельных ворклоадах выдавало до 15M RPS</li>
+            </ul>
+            <div class="next" align="center">
+                <p><code>RPC benchmark : Requests per sercond : 14222727</code></p>
+            </div>
+        </figure>
+    </section>
+
+    <!-- MEMCACHED RPC -->
+    <section class="slide">
+        <figure>
+            <h2>Memcached RPC</h2>
+            <ul>
+                <li>Memcached-подобная in-memory БД с общением по RPC</li>
+                <li class="next">Хорошо масштабируется</li>
+                <li class="next">При благоприятных условиях на пике - до 9M RPS</li>
+            </ul>
+            <div class="next" align="center">
+                <p><code>Put benchmark : Requests per sercond : 9478672</code></p>
+                <p><code>Get benchmark : Requests per sercond : 8490405</code></p>
+            </div>
+        </figure>
+    </section>
+
+    <!-- CSP & DATASTREAMS -->
+    <section class="slide">
+        <h2>I/O : CSP & Datastream</h2>
+        <div class="columns two" style="font-size:1.15rem;">
+            <ul align="center">
+                <p style="font-size:1.4rem;" align="center"><b>CSP</b></p>
+                <li>Вдохновлен каналами из Golang </li>
+                <li class="next">Комбинированная push-pull механика</li>
+                <li class="next">"Питается" буферами среднего размера</li>
+                <li class="next">Эффективный механизм async back-pressure</li>
+                <li class="next">Простой developer experience</li>
+                <li class="next">Быстр, но медленнее Datastream</li>
+            </ul>
+            <ul align="center">
+                <p style="font-size:1.4rem;"><b>Datastream</b></p>
+                <li>Реактивный асинхронный</li>
+                <li class="next">Работа по принципу <b>Tell Don't Ask</b></li>
+                <li class="next">Хорош для маленьких кусочков данных</li>
+                <li class="next">Эффективный контроль перегрузки</li>
+                <li class="next">Чертовски хорош и быстр, но сложнее DX</li>
+                <li class="next">Пользует <b>Event Loop</b> в хвост и гриву</li>
+            </ul>
+        </div>
+        <p class="next" style="margin:1rem;" align="center">CSP и Datastream совместимы друг с другом</p>
+    </section>
+
+    <!-- REAL WORLD -->
+    <section class="slide">
+        <figure>
+            <h2>Реальные успехи DataKernel</h2>
+            <ul>
+                <li>Ворклоад связан с доставкой рекламы на разные страницы</li>
+                <li class="next">Переписав приложение на DataKernel,
+                    мы избавились от проблем с производительностью и масштабируемостью</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- Summary -->
+    <section class="slide">
+        <figure>
+            <h2>Summary : наш опыт</h2>
+            <ul>
+                <li>Не нужно бояться экспериментов, когда сроки и бизнес позволяют</li>
+                <li class="next">Связка хорошей CS подготовки с опытом разработки способна сгенерировать достойный
+                    продукт</li>
+                <li class="next">Попробуйте DataKernel, присылайте обратную связь</li>
+                <li class="next"><b>PR are welcomed</b> ☺️</li>
+            </ul>
+        </figure>
     </section>
 
     <section class="slide" id="see-more">
