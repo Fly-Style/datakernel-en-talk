@@ -18,10 +18,20 @@
             src: url("Lato/Lato-Regular.ttf");
         }
 
+        @font-face {
+            font-family: "Expressway";
+            src: url("Lato/ExpresswaySoft.ttf");
+        }
+
+        @font-face {
+            font-family: "ExpresswayBk";
+            src: url("Lato/ExpresswaySoftBk.ttf");
+        }
+
         .slide {
-            font-family: "Lato";
+            font-family: "ExpresswayBk";
             background: #fff3e5;
-            font-size: 1.6rem;
+            font-size: 1.65rem;
         }
 
         .slide code {
@@ -36,6 +46,10 @@
 
         .slide blockquote {
             font-size: 1.5rem;
+        }
+
+        li::before {
+            content: close-quote;
         }
 
         #telegram {
@@ -190,12 +204,52 @@
             <ul>
                 <li>Лёгкая обёртка над результатом асинхронного вычисления</li>
                 <li class="next">Задизайнены для работы с однопоточным event loop.</li>
-                <li class="next">Совместимы с <code>java.util.concurrent.CompletableFuture</code></li>
+                <li class="next">Совместимы с <b>java.util.concurrent.CompletableFuture</b></li>
             </ul>
             <div class="next" align="center">
                 <p><code>oneCallMeasure : 12.736 ± 0.980 ns/op</code></p>
                 <p><code>combineMeasure : 27.590 ± 0.829 ns/op</code></p>
             </div>
+        </figure>
+    </section>
+
+    <!-- PROMISES IN SCALE #1 -->
+    <section class="slide">
+        <h2>Под лупой : Promise</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/promises.svg" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- PROMISES IN SCALE #2 -->
+    <section class="slide">
+        <h2>Под лупой : Promise</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/promises_1.svg" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- PROMISES IN SCALE #3 -->
+    <section class="slide">
+        <h2>Под лупой : Promise</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/promises_2.svg" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- PROMISES IN SCALE #4 -->
+    <section class="slide">
+        <h2>Под лупой : Promise</h2>
+        <figure align="center">
+            <picture>
+                <img src="pictures/promises_3.svg" alt="Promise Architecture Diagram">
+            </picture>
         </figure>
     </section>
 
@@ -262,7 +316,32 @@
                 <li class="next">Работает перед стартом работы приложения (startup time)</li>
                 <li class="next">Крайне шустро&#x301; : использует уже "запеченые" объекты</li>
                 <li class="next">Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
-                <li class="next">Предоставляется отдельным модулем без зависимостей</li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- DI in deep -->
+    <section class="slide">
+        <figure>
+            <h2>Dependency Injection : крупно</h2>
+            <ul>
+                <li>Да-да, у нас есть своё внедрение зависимостей!</li>
+                <li>Работает перед стартом работы приложения (startup time)</li>
+                <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
+                <li>Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- DI in deep #2 -->
+    <section class="slide">
+        <figure>
+            <h2>Dependency Injection : крупно</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
+                <li></li>
             </ul>
         </figure>
     </section>
@@ -352,7 +431,7 @@
                 <li>Вдохновлен каналами из Golang </li>
                 <li class="next">Комбинированная push-pull механика</li>
                 <li class="next">"Питается" буферами среднего размера</li>
-                <li class="next">Эффективный механизм async back-pressure</li>
+                <li class="next">Эффективный async back-pressure</li>
                 <li class="next">Простой developer experience</li>
                 <li class="next">Быстр, но медленнее Datastream</li>
             </ul>
