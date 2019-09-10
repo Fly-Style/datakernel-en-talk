@@ -69,13 +69,13 @@
 
     <section class="slide" id="cover">
         <br>
-        <h2>В поисках</h2>
-        <h2>асинхронного счастья</h2>
+        <h2>DataKernel : </h2> 
+        <h2>Mastering Ukrainian highload framework</h2>
         <style>
             #cover h2 {
                 margin: 30px 0 0;
                 text-align: center;
-                font-size: 96px;
+                font-size: 84px;
             }
 
             #cover p {
@@ -107,7 +107,7 @@
 
     <section class="slide" id="see-more">
         <h2 class="shout">
-            <img src="pictures/talk.svg" alt="QR Code" style="width: 400px; height: 400px;">
+            <img src="pictures/talk.png" alt="QR Code" style="width: 400px; height: 400px;">
         </h2>
     </section>
 
@@ -202,7 +202,8 @@
         <figure>
             <h2>Core Components</h2>
             <br>
-            <p align="center" style="font-size: 2rem;" class="next">В основе - <b>всеобщая совместимость всех</b> модулей </p>
+            <p align="center" style="font-size: 2rem;" class="next">В основе - <b>всеобщая совместимость всех</b>
+                модулей </p>
             <p align="center" style="font-size: 2rem;" class="next">в рамках одной <b>асинхронной</b> концепции!</p>
             <br>
         </figure>
@@ -359,7 +360,7 @@
     <!-- DI BENCHMARKS -->
     <section class="slide">
         <figure>
-            <h2>Dependency Injection</h2>
+            <h2>Dependency Injection : быстро</h2>
             <br>
             <div class="next" align="center">
                 <p><code>DataKernelDI      : 138.475 ± (99.9%) 6.156 ns/op</code></p>
@@ -467,9 +468,42 @@
         </figure>
     </section>
 
+    <!-- OVERALL -->
+    <section class="slide">
+        <figure>
+            <h2>Overall</h2>
+            <pre>
+                <code id="worker"><font color="#BA55D3">public final class </font><font color="##7B68EE">HttpHelloWorldExample</font> <font color="#BA55D3">extends</font> <font color="##7B68EE">HttpServerLauncher</font> {</code>
+                <code id="worker">  <font color="##7B68EE">@Provides</font></code>
+                <code id="worker">  <font color="##7B68EE">AsyncServlet</font> servlet() {</code>
+                <code id="worker">      <font color="#BA55D3">return</font> request -> <font color="##7B68EE">Promise</font>.of(ok200().withPlainText("Hello World"));</code>
+                <code id="worker">  }</code>
+                
+                <code id="worker">  <font color="#BA55D3">public static void</font> main(String[] args) <font color="#BA55D3">throws</font> Exception {</code>
+                <code id="worker">      <font color="##7B68EE">Launcher</font> launcher = new <font color="##7B68EE">HttpHelloWorldExample</font>();</code>
+                <code id="worker">      launcher.launch(args);</code>
+                <code id="worker">} }</code>
+            </pre>
+        </figure>
+    </section>
+
     <!-- DATAKERNEL IN ACTION -->
     <section class="slide" id="chapter">
-        <h2 class="shout shrink">DataKernel in Action</h2>
+        <h2 class="shout shrink">DataKernel Tools</h2>
+    </section>
+
+    <!-- BYTEBUFFERS -->
+    <section class="slide">
+        <figure>
+            <h2>ByteBuf</h2>
+            <ul>
+                <li>Собственная GC-friendly реализация байтбуферов</li>
+                <li class="next">В комплекте идёт удобная реализация <b>пула</b> байтбуфеов</li>
+                <li class="next">... а также ByteBufQueue для менеджмента нескольких буферов</li>
+                <li class="next">Куча утилитарных методов для порезки, кодирования, переливания и манипуляций с данными
+                </li>
+            </ul>
+        </figure>
     </section>
 
     <!-- RPC -->
@@ -530,12 +564,27 @@
         <p class="next" style="margin:1rem;" align="center">CSP и Datastream совместимы друг с другом</p>
     </section>
 
+    <!-- AND ALSO-->
+    <section class="slide">
+        <figure>
+            <h2>А также ... </h2>
+            <ul>
+                <li>Один из самых быстрых сериализаторов без схемы в мире</li>
+                <li>Сloud : FS, OT, аггрегации логов и async процессинг данных </li>
+                <li>Встроенные средства мониторинга через JMX </li>
+                <li>Интеграция с Zabbix-подобными сервисами </li>
+                <li>Базы данных прямо на DataKernel : <b>LSM OLAP Cube</b></li>
+            </ul>
+        </figure>
+    </section>
+
     <!-- REAL WORLD -->
     <section class="slide">
         <figure>
             <h2>Реальные успехи DataKernel</h2>
             <ul>
                 <li>Ворклоад связан с доставкой рекламы на разные страницы</li>
+                <li>И он не упал <b>ни разу</b> за три года</li>
                 <li class="next">Переписав приложение на DataKernel,
                     мы избавились от проблем с производительностью и масштабируемостью</li>
             </ul>
