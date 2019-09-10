@@ -167,7 +167,7 @@
         <figure>
             <h2>Ключевые особенности архитектуры</h2>
             <ul>
-                <li>Хорошо разбит на модули без лишних зависимостей</li>
+                <li>Хорошо разбит на составные модули без лишних зависимостей</li>
                 <li class="next">Полностью асинхронный (на манер Node.js)</li>
                 <li class="next">Максимизация работы в рамках одного потока</li>
                 <li class="next">Быстрое внедрение зависимостей и запуск приложений</li>
@@ -195,6 +195,17 @@
     <!-- DATAKERNEL COMPONENTS -->
     <section class="slide" id="chapter">
         <h2 class="shout shrink">Core Components</h2>
+    </section>
+
+    <!-- DATAKERNEL COMPONENTS -->
+    <section class="slide">
+        <figure>
+            <h2>Core Components</h2>
+            <br>
+            <p align="center" style="font-size: 2rem;" class="next">В основе - <b>всеобщая совместимость всех</b> модулей </p>
+            <p align="center" style="font-size: 2rem;" class="next">в рамках одной <b>асинхронной</b> концепции!</p>
+            <br>
+        </figure>
     </section>
 
     <!-- PROMISES -->
@@ -315,6 +326,7 @@
                 <li class="next">Да-да, у нас есть своё внедрение зависимостей!</li>
                 <li class="next">Работает перед стартом работы приложения (startup time)</li>
                 <li class="next">Крайне шустро&#x301; : использует уже "запеченые" объекты</li>
+                <li class="next"><b>Асинхронно</b></li>
                 <li class="next">Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
             </ul>
         </figure>
@@ -326,8 +338,9 @@
             <h2>Dependency Injection : крупно</h2>
             <ul>
                 <li>Да-да, у нас есть своё внедрение зависимостей!</li>
-                <li>Работает перед стартом работы приложения (startup time)</li>
+                <li><b>Работает перед стартом работы приложения (startup time)</b></li>
                 <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
+                <li><b>Асинхронно, Карл!!! </b></li>
                 <li>Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
             </ul>
         </figure>
@@ -336,12 +349,9 @@
     <!-- DI in deep #2 -->
     <section class="slide">
         <figure>
-            <h2>Dependency Injection : крупно</h2>
+            <h2>Dependency Injection : быстро</h2>
             <ul>
-                <li></li>
-                <li></li>
                 <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
-                <li></li>
             </ul>
         </figure>
     </section>
@@ -352,8 +362,8 @@
             <h2>Dependency Injection</h2>
             <br>
             <div class="next" align="center">
-                <p><code>DataKernelDI      : 287.240 ± 10.404  ns/op</code></p>
-                <p><code>GuiceDiBenchmark  : 750.395 ± 58.030  ns/op</code></p>
+                <p><code>DataKernelDI      : 138.475 ± (99.9%) 6.156 ns/op</code></p>
+                <p><code>GuiceDiBenchmark  : 780.017 ± (99.9%) 23.994 ns/op</code></p>
                 <p><code>SpringDiBenchmark : 75629.3 ± 571.223 ns/op</code></p>
             </div>
         </figure>
@@ -382,6 +392,78 @@
                 <li>Работает в сочетании с модулем <b>DI</b> в <b>Launcher</b></li>
                 <li>Обходит граф зависимостей in <b>postoder</b> way</li>
             </ul>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g1.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g2.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g3.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g4.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g5.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g6.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g7.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH PIC -->
+    <section class="slide">
+        <figure align="center">
+            <picture>
+                <img src="pictures/g8.svg" style="width:30rem; height:20rem;" alt="Promise Architecture Diagram">
+            </picture>
         </figure>
     </section>
 
@@ -465,7 +547,7 @@
         <figure>
             <h2>Summary : наш опыт</h2>
             <ul>
-                <li>Не нужно бояться экспериментов, когда сроки и бизнес позволяют</li>
+                <li>Не бояться экспериментов, когда сроки и бизнес позволяют</li>
                 <li class="next">Связка хорошей CS подготовки с опытом разработки способна сгенерировать достойный
                     продукт</li>
                 <li class="next">Попробуйте DataKernel, присылайте обратную связь</li>
