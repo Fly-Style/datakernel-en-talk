@@ -69,7 +69,7 @@
 
     <section class="slide" id="cover">
         <br>
-        <h2>DataKernel : </h2> 
+        <h2>DataKernel : </h2>
         <h2>Mastering Ukrainian highload framework</h2>
         <style>
             #cover h2 {
@@ -94,61 +94,67 @@
 
     <section class="slide">
         <figure>
-            <h2>О себе : Александр Сиротенко</h2>
+            <h2>Alexander Syrotenko</h2>
             <br>
             <ul>
                 <li>Software Engineer <b>@datakernel.io</b></li>
-                <li>Разрабатываем фреймворк DataKernel.</li>
-                <li>&#128525; опенсорс.</li>
-                <li>Увлекаюсь (пишу) компиляторами/рантаймами и вообще, low-level.</li>
+                <li>Hacking DataKernel.</li>
+                <li>&#128525; opensource.</li>
+                <li>In love with compilers and runtimes.</li>
             </ul>
         </figure>
     </section>
 
     <section class="slide" id="see-more">
         <h2 class="shout">
-            <img src="pictures/talk.png" alt="QR Code" style="width: 400px; height: 400px;">
+            <img src="pictures/talk.svg" alt="QR Code" style="width: 400px; height: 400px;">
         </h2>
     </section>
 
     <section class="slide">
         <figure>
-            <h2>Safe Harbour</h2>
-            <br>
-            <p align="center">Всё, о чем я буду сейчас рассказывать, может ещё поменяться.</p>
-            <p align="center" class="next">В лучшую сторону, уверен ;)</p>
-        </figure>
-    </section>
-
-    <section class="slide">
-        <figure>
-            <h2>Модели многозадачности</h2>
+            <h2>Multitasking models</h2>
             <ul>
-                <li>Concurrency : потоки и их синхронизация</li>
-                <li class="next">Параллелизм (ФП) : потоки в ленивых языках</li>
-                <li class="next">Модель акторов : акторы, кидющиеся <strike>какаш..</strike> сообщениями</li>
-                <li class="next">Асинхронное : callbacks, promises/futures, сопрограммы</li>
-                <li class="next">Реактивное : Observables. Эксель, короче говоря.</li>
+                <li>Concurrency : threads synchronization</li>
+                <li class="next">Pure parallelism (FP). Is acceptable in lazy languages</li>
+                <li class="next">Asynchronous : callbacks, promises/futures, coroutines</li>
+                <li class="next">Actors model with asynchronous cross-entity messaging</li>
+                <li class="next">Reactive + Asynchronous : like Excel</li>
             </ul>
         </figure>
     </section>
 
     <section class="slide">
         <figure>
-            <h2>Боль выделена жирным</h2>
+            <!--TODO: Rename the header-->
+            <h2>Pain exists</h2>
             <ul>
-                <li>Concurrency : потоки и их <b>синхронизация</b></li>
-                <li>Параллелизм (ФП) : потоки в <b>ленивых языках</b></li>
-                <li>Модель акторов : акторы, <b>кидющиеся</b> <strike>какаш..</strike> <b>сообщениями</b></li>
-                <li>Асинхронное : <b>callbacks</b>, <b>promises/futures</b>, сопрограммы</li>
-                <li>Реактивное : <b>Observables</b>. Эксель, короче говоря.</li>
+                <li>Concurrency : <b>threads synchronization</b></li>
+                <li>Pure parallelism (<b>FP</b>). Is acceptable in <b>lazy languages</b></li>
+                <li><b>Asynchronous</b> : callbacks, promises/futures, coroutines</li>
+                <li>Actors model with <b>asynchronous</b> cross-entity <b>messaging</b></li>
+                <li>Reactive + <b>Asynchronous</b> : Excel-like. <b>Observables, Rx-*</b></li>
+            </ul>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <!--TODO: Rename the header-->
+            <h2>Pain exists</h2>
+            <ul>
+                <li>Concurrency : <b>threads synchronization</b></li>
+                <li>Pure parallelism (<b>FP</b>). Is acceptable in <b>lazy languages</b></li>
+                <li><b>Asynchronous : callbacks, promises/futures, coroutines</b></li>
+                <li>Actors model with <b>asynchronous</b> cross-entity <b>messaging</b></li>
+                <li>Reactive + <b>Asynchronous</b> : Excel-like. <b>Observables, Rx-*</b></li>
             </ul>
         </figure>
     </section>
 
     <!-- Shipilёv CURVE-->
     <section class="slide" id="see-more">
-        <h2 style="font-size: 2.25rem;">Кривая имени Ш.</h2>
+        <h2 style="font-size: 2.25rem;">Shipilёv Сurve</h2>
         <figure class="next">
             <a href="https://www.youtube.com/watch?v=p2b4JHESEOc">
                 <img src="pictures/curve_sh.png" alt="Shipilёv Curve"
@@ -165,13 +171,13 @@
     <!-- OVERALL -->
     <section class="slide">
         <figure>
-            <h2>Ключевые особенности архитектуры</h2>
+            <h2>Key architectural features</h2>
             <ul>
-                <li>Хорошо разбит на составные модули без лишних зависимостей</li>
-                <li class="next">Полностью асинхронный (на манер Node.js)</li>
-                <li class="next">Максимизация работы в рамках одного потока</li>
-                <li class="next">Быстрое внедрение зависимостей и запуск приложений</li>
-                <li class="next">Низкий порог входа</li>
+                <li>Divided well into modules without unnecessary dependencies</li>
+                <li class="next">Completely asynchronous (in the manner of Node.js)</li>
+                <li class="next">Maximize single processor core utilization</li>
+                <li class="next">Very quick application start and dependencies injection</li>
+                <li class="next">Low entry level</li>
             </ul>
         </figure>
     </section>
@@ -179,15 +185,15 @@
     <!-- HOW DOES IT WORKS -->
     <section class="slide">
         <figure>
-            <h2>Вкратце : как это работает</h2>
+            <h2>How does it works?</h2>
             <ul>
-                <li>Приложение стартует с помощью модуля <b>Launcher</b></li>
-                <li class="next">Все зависимости при старте внедряются модулем <b>Service Graph</b></li>
-                <li class="next">Модуль <b>WorkerPool</b> обеспечит исполнение асинхронных задач </li>
-                <li class="next">Основной работяга в этой схеме - асинхронный примитив <b>Promise</b></li>
-                <li class="next">За годы работы были разработаны производительные и удобные
-                    HTTP, TCP, RPC, memcached сервера;</li>
-                <li class="next">Получился пригодный почти для всего фреймворк. Welcome!</li>
+                <li>The application starts using the <b>Launcher</b> module</li>
+                <li class="next">All dependencies at startup time are injecting by <b> Service Graph</b></li>
+                <li class="next"><b>WorkerPool</b> module : multithreaded asynchronous tasks execution;</li>
+                <li class="next">Own asynchronous primitive <b>Promise</b> for any asynchronous tasks;</li>
+                <li class="next">Over the years, we created a lot of productive and convenient tools : </li>
+                <li class="next"><b>HTTP(S), TCP, UDP, RPC, memcached RPC, CRDT and other</b> servers; </li>
+                <li class="next">As a result, a new multifunctional framework is borned. Welcome!</li>
             </ul>
         </figure>
     </section>
@@ -197,14 +203,13 @@
         <h2 class="shout shrink">Core Components</h2>
     </section>
 
-    <!-- DATAKERNEL COMPONENTS -->
+    <!-- DATAKERNEL MOTTO -->
     <section class="slide">
         <figure>
-            <h2>Core Components</h2>
+            <h2>Motto</h2>
             <br>
-            <p align="center" style="font-size: 2rem;" class="next">В основе - <b>всеобщая совместимость всех</b>
-                модулей </p>
-            <p align="center" style="font-size: 2rem;" class="next">в рамках одной <b>асинхронной</b> концепции!</p>
+            <p align="center" style="font-size: 2rem;" class="next">Universal <b>compatibility</b> of all modules </p>
+            <p align="center" style="font-size: 2rem;" class="next">as a part of <b>one asynchronous</b> concept!!</p>
             <br>
         </figure>
     </section>
@@ -214,9 +219,9 @@
         <figure>
             <h2>Promise</h2>
             <ul>
-                <li>Лёгкая обёртка над результатом асинхронного вычисления</li>
-                <li class="next">Задизайнены для работы с однопоточным event loop.</li>
-                <li class="next">Совместимы с <b>java.util.concurrent.CompletableFuture</b></li>
+                <li>Gently wraps a result of an asynchronous computation.</li>
+                <li class="next">Designed especially for coop with single-threaded event loop.</li>
+                <li class="next">Is compatible with <b>java.util.concurrent.CompletableFuture</b></li>
             </ul>
             <div class="next" align="center">
                 <p><code>oneCallMeasure : 12.736 ± 0.980 ns/op</code></p>
@@ -227,7 +232,7 @@
 
     <!-- PROMISES IN SCALE #1 -->
     <section class="slide">
-        <h2>Под лупой : Promise</h2>
+        <h2>Promise in Scale</h2>
         <figure align="center">
             <picture>
                 <img src="pictures/promises.svg" alt="Promise Architecture Diagram">
@@ -237,7 +242,7 @@
 
     <!-- PROMISES IN SCALE #2 -->
     <section class="slide">
-        <h2>Под лупой : Promise</h2>
+        <h2>Promise in Scale</h2>
         <figure align="center">
             <picture>
                 <img src="pictures/promises_1.svg" alt="Promise Architecture Diagram">
@@ -247,7 +252,7 @@
 
     <!-- PROMISES IN SCALE #3 -->
     <section class="slide">
-        <h2>Под лупой : Promise</h2>
+        <h2>Promise in Scale</h2>
         <figure align="center">
             <picture>
                 <img src="pictures/promises_2.svg" alt="Promise Architecture Diagram">
@@ -257,7 +262,7 @@
 
     <!-- PROMISES IN SCALE #4 -->
     <section class="slide">
-        <h2>Под лупой : Promise</h2>
+        <h2>Promise in Scale</h2>
         <figure align="center">
             <picture>
                 <img src="pictures/promises_3.svg" alt="Promise Architecture Diagram">
@@ -270,10 +275,10 @@
         <figure>
             <h2>Event Loop</h2>
             <ul>
-                <li>Менеджер асинхронных операций с очередью задач</li>
-                <li class="next">Сидит на одном потоке и максимизирует пользование только одного ядра.</li>
-                <li class="next">"Дружит" с GC : переиспользует массивы и байтбуфера</li>
-                <li class="next">Доступны и блокирующие операции <i>(но лучше не надо)</i></li>
+                <li>Manager of asynchronous operations with task queues</li>
+                <li class="next">Maximize utilizing of only one processor core.</li>
+                <li class="next">They are the best friends with GC : event loop uses pools.</li>
+                <li class="next">Blocking procedures are also available (don’t use them pleease)</li>
             </ul>
         </figure>
     </section>
@@ -283,9 +288,11 @@
         <figure>
             <h2>Worker Pool</h2>
             <ul>
-                <li>Event Loop-ом ли единым в наших приложениях?</li>
-                <li class="next">Приложение на DK работает с <b>множеством</b> циклов событий!</li>
-                <li class="next">Для эффективной работы таких приложений используется <b>внедрение зависимостей</b></li>
+                <li>DataKernel scalable tools usually works with multiple Event Loops!</li>
+                <li class="next">You can <b>linearly increase</b> the computation power of your application using
+                    WorkerPool.</li>
+                <li class="next">For example, <b>MultithreadedHttpServerLauncher</b></li>
+                <li class="next">As a rule, such class of applications uses dependency injection.</li>
             </ul>
         </figure>
     </section>
@@ -309,6 +316,23 @@
         </figure>
     </section>
 
+    <section class="slide">
+        <h2>Worker Pool</h2>
+        <figure>
+            <pre>
+                <code id="worker"><font color="##7B68EE">@Provides</font></code>
+                <code id="worker"><font color="##7B68EE">WorkerPool</font> workerPool(<font color="##7B68EE">WorkerPools</font> workerPools) { </code>
+                <code id="worker">   <font color="#BA55D3">return</font> workerPools.createPool(4);</code>
+                <code id="worker">}</code>
+                <code id="worker"><font color="##7B68EE">@Provides</font></code>
+                <code id="worker"><font color="##7B68EE"><b style="font-size: 1.5rem;">@Worker</b></font></code>
+                <code id="worker"><font color="##7B68EE">String</font> string(<font color="##7B68EE"><b style="font-size: 1.5rem;">@WorkerId</b></font> <font color="##7B68EE">int</font> workerId) {</code>
+                <code id="worker">   <font color="#BA55D3">return</font> <font color="#6B8E23">"Hello from worker #"</font> + workerId;</code>
+                <code id="worker">}</code>
+            </pre>
+        </figure>
+    </section>
+
     <!-- WORKER POOL PIC -->
     <section class="slide">
         <h2>Worker Pool</h2>
@@ -324,35 +348,44 @@
         <figure>
             <h2>Dependency Injection</h2>
             <ul>
-                <li class="next">Да-да, у нас есть своё внедрение зависимостей!</li>
-                <li class="next">Работает перед стартом работы приложения (startup time)</li>
-                <li class="next">Крайне шустро&#x301; : использует уже "запеченые" объекты</li>
-                <li class="next"><b>Асинхронно</b></li>
-                <li class="next">Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
+                <li class="next">Yes - yes! We have our own dependency injection tool!</li>
+                <li class="next">It works before the application starts, at startup time</li>
+                <li class="next">Extremely fast: uses already baked objects</li>
+                <li class="next"><b>Asynchronously :)</b></li>
+                <li class="next">Supports scopes, factory instances, modules.</li>
+                <li class="next">Extremely convenient and easy-to-use module builder tool!</li>
             </ul>
+        </figure>
+    </section>
+
+    <!-- DI MODULE BUILDER EXAMPLE -->
+    <section class="slide">
+        <h2>Worker Pool</h2>
+        <figure>
+            <pre>
+                <code id="worker"><font color="##7B68EE">Module</font> module = <font color="##7B68EE">Module</font>.create()</code>
+                <code id="worker">  .bind(<font color="##7B68EE">Sugar</font>.class).to(() -> new <font color="##7B68EE">Sugar</font>(<font color="#6B8E23">"WhiteSugar"</font>, 10.0f))</code>
+                <code id="worker">  .bind(<font color="##7B68EE">Butter</font>.class).to(() -> new <font color="##7B68EE">Butter</font>(<font color="#6B8E23">"PerfectButter"</font>, 20.0f))</code>
+                <code id="worker">  .bind(<font color="##7B68EE">Flour</font>.class).to(() -> new <font color="##7B68EE">Flour</font>(<font color="#6B8E23">"GoodFlour"</font>, 100.0f))</code>
+                <code id="worker">  .bind(<font color="##7B68EE">Pastry</font>.class).to(<font color="##7B68EE">Pastry</font>::new, <font color="##7B68EE">Sugar</font>.class, <font color="##7B68EE">Butter</font>.class, <font color="##7B68EE">Flour</font>.class)</code>
+                <code id="worker">  .bind(<font color="##7B68EE">Cookie</font>.class).to(<font color="##7B68EE">Cookie</font>::new, <font color="##7B68EE">Pastry</font>.class);</code>
+                <code id="worker"> </code>
+                <code id="worker"><font color="##7B68EE">Injector</font> injector = <font color="##7B68EE">Injector</font>.of(module);</code>
+            </pre>
         </figure>
     </section>
 
     <!-- DI in deep -->
     <section class="slide">
         <figure>
-            <h2>Dependency Injection : крупно</h2>
+            <h2>Dependency Injection : enlarge</h2>
             <ul>
-                <li>Да-да, у нас есть своё внедрение зависимостей!</li>
-                <li><b>Работает перед стартом работы приложения (startup time)</b></li>
-                <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
-                <li><b>Асинхронно, Карл!!! </b></li>
-                <li>Поддерживает скоупы, синглетоны и экземпляры фабрик, <b>модули</b></li>
-            </ul>
-        </figure>
-    </section>
-
-    <!-- DI in deep #2 -->
-    <section class="slide">
-        <figure>
-            <h2>Dependency Injection : быстро</h2>
-            <ul>
-                <li><b>Крайне шустро&#x301; : использует уже "запеченые" объекты</b></li>
+                <li class="next">Yes - yes! We have our own dependency injection tool!</li>
+                <li class="next">It works before the application starts, at <b>startup time</b></li>
+                <li class="next"><b>Extremely fast: uses already baked objects</b> </li>
+                <li class="next"><b>Asynchronously :)</b></li>
+                <li class="next">Supports scopes, factory instances, modules.</li>
+                <li class="next">Extremely convenient and easy-to-use module builder tool!</li>
             </ul>
         </figure>
     </section>
@@ -360,7 +393,7 @@
     <!-- DI BENCHMARKS -->
     <section class="slide">
         <figure>
-            <h2>Dependency Injection : быстро</h2>
+            <h2>Dependency Injection : so fast</h2>
             <br>
             <div class="next" align="center">
                 <p><code>DataKernelDI      : 138.475 ± (99.9%) 6.156 ns/op</code></p>
@@ -375,10 +408,9 @@
         <figure>
             <h2>Launcher</h2>
             <ul>
-                <li>Технология, которая избавила нас от серверов приложений</li>
-                <li class="next">Умная надстройка над <b> main </b> методом</li>
-                <li class="next">Проводит много манипуляций с помощью DI, стартует все вложенные сервисы, логгирует</li>
-                <li class="next">Он же обеспечивает и производит и остановку приложения.</li>
+                <li>The technology that saved us from application servers.</li>
+                <li class="next">Smart wrapper over the main method.</li>
+                <li class="next">Carries out a lot of manipulations using DI.</li>
             </ul>
         </figure>
     </section>
@@ -388,13 +420,54 @@
         <figure>
             <h2>Service Graph</h2>
             <ul>
-                <li>Предназначен для использования в качестве средства для старта / стопа сервисов приложения в
-                    соответствии с графом зависимостей</li>
-                <li>Работает в сочетании с модулем <b>DI</b> в <b>Launcher</b></li>
-                <li>Обходит граф зависимостей in <b>postoder</b> way</li>
+                <li>Starts and stops all nested and dependent services.</li>
+                <li>Traverse dependency graph in postorder way.</li>
+                <li>Works in conjunction with the DI module in Launcher.</li>
             </ul>
         </figure>
     </section>
+
+       <!-- SERVICE GRAPH CODE -->
+       <section class="slide">
+        <figure>
+            <h2>Service Graph</h2>
+            <pre>
+                <code style="font-family:mononoki; font-size: 0.5rem;">public class RpcServerApp extends Launcher {
+    @Inject
+    RpcServer server;
+                  
+    @Override
+    protected Module getModule() {
+        return Module.create().install(<b>ServiceGraphModule</b>.create())
+                              .install(<b>RPCExampleServerModule</b>.create());
+    }
+    
+    @Override
+    protected void run() throws Exception { <b>awaitShutdown</b>(); }
+}</code>
+            </pre>
+        </figure>
+    </section>
+
+    <!-- SERVICE GRAPH CODE - 2 -->
+    <section class="slide">
+        <figure>
+            <pre>
+                <code style="font-family:mononoki; font-size: 1.3rem;">public class <font color="##7B68EE">RpcServerApp</font> extends <font color="##7B68EE">Launcher</font> {
+    <font color="##7B68EE">@Override</font>
+    protected <font color="##7B68EE">Module</font> getModule() {
+        return <font color="##7B68EE">Module</font>.create().install(<font color="##7B68EE"><b>ServiceGraphModule</b></font>.create())
+                              .install(<font color="##7B68EE"><b>RPCExampleServerModule</b></font>.create());
+                              .install(<font color="##7B68EE">ConfigModule</font>.create().<i>(...)</i>);
+    }
+    
+    <font color="##7B68EE">@Override</font>
+    protected <font color="##7B68EE">void</font> run() throws Exception { <b>awaitShutdown</b>(); }
+}</code>
+            </pre>
+        </figure>
+    </section>
+
 
     <!-- SERVICE GRAPH PIC -->
     <section class="slide">
@@ -497,11 +570,10 @@
         <figure>
             <h2>ByteBuf</h2>
             <ul>
-                <li>Собственная GC-friendly реализация байтбуферов</li>
-                <li class="next">В комплекте идёт удобная реализация <b>пула</b> байтбуфеов</li>
-                <li class="next">... а также ByteBufQueue для менеджмента нескольких буферов</li>
-                <li class="next">Куча утилитарных методов для порезки, кодирования, переливания и манипуляций с данными
-                </li>
+                <li>Own GC-friendly implementation of bytebuffers</li>
+                <li class="next">Includes a convenient implementation of the <b>ByteBuffer Pool</b></li>
+                <li class="next">Also <b>ByteBufferQueue</b> for managing multiple buffers.</li>
+                <li class="next">A lot of utility methods to cut, encode, transfuse and other buffer manipulation.</li>
             </ul>
         </figure>
     </section>
@@ -511,10 +583,11 @@
         <figure>
             <h2>RPC</h2>
             <ul>
-                <li>Написаны готовые решения c помощью RPC</li>
-                <li class="next">Поддерживается много вкусных стратегий отправки</li>
-                <li class="next"><b>Шардирование</b> и оптимизированный <b>rendezvous hashing</b></li>
-                <li class="next">На отдельных ворклоадах выдавало до 15M RPS</li>
+                <li>A loooot of services was written with RPC.</li>
+                <li>RPC <b>server</b> and <b>client</b> are available.</li>
+                <li class="next">Support a lot of sending strategies.</li>
+                <li class="next">E.g, <b>sharding</b> or highly-optimized <b>rendezvous hashing</b>.</li>
+                <li class="next">Magnificently fast: up to 15M RPS on one core.</li>
             </ul>
             <div class="next" align="center">
                 <p><code>RPC benchmark : Requests per sercond : 14222727</code></p>
@@ -527,9 +600,9 @@
         <figure>
             <h2>Memcached RPC</h2>
             <ul>
-                <li>Memcached-подобная in-memory БД с общением по RPC</li>
-                <li class="next">Хорошо масштабируется</li>
-                <li class="next">При благоприятных условиях на пике - до 9M RPS</li>
+                <li>Memcached-like in-memory DB with RPC communication</li>
+                <li class="next">Ultimately well-scalable</li>
+                <li class="next">And exceptionally fast : up to 9M RPS on single core</li>
             </ul>
             <div class="next" align="center">
                 <p><code>Put benchmark : Requests per sercond : 9478672</code></p>
@@ -541,39 +614,39 @@
     <!-- CSP & DATASTREAMS -->
     <section class="slide">
         <h2>I/O : CSP & Datastream</h2>
-        <div class="columns two" style="font-size:1.15rem;">
+        <div class="columns two" style="font-size:1.2rem;">
             <ul align="center">
-                <p style="font-size:1.4rem;" align="center"><b>CSP</b></p>
-                <li>Вдохновлен каналами из Golang </li>
-                <li class="next">Комбинированная push-pull механика</li>
-                <li class="next">"Питается" буферами среднего размера</li>
-                <li class="next">Эффективный async back-pressure</li>
-                <li class="next">Простой developer experience</li>
-                <li class="next">Быстр, но медленнее Datastream</li>
+                <p style="font-size:1.6rem;" align="center"><b>CSP</b></p>
+                <li>Inspired by Golang channels</li>
+                <li class="next">Compined "push-pull" mechanic</li>
+                <li class="next">Performance with middle-size byte buffers</li>
+                <li class="next">Effective async back-pressure</li>
+                <li class="next">Simple developer experience</li>
+                <li class="next">Fast enough, but slower than Datastream</li>
             </ul>
             <ul align="center">
-                <p style="font-size:1.4rem;"><b>Datastream</b></p>
-                <li>Реактивный асинхронный</li>
-                <li class="next">Работа по принципу <b>Tell Don't Ask</b></li>
-                <li class="next">Хорош для маленьких кусочков данных</li>
-                <li class="next">Эффективный контроль перегрузки</li>
-                <li class="next">Чертовски хорош и быстр, но сложнее DX</li>
-                <li class="next">Пользует <b>Event Loop</b> в хвост и гриву</li>
+                <p style="font-size:1.6rem;"><b>Datastream</b></p>
+                <li><b>Reactive and asynchronous</b></li>
+                <li class="next">It works по with <b>"Tell Don't Ask"</b> principle</li>
+                <li class="next">Optimized to work with small pieces of data</li>
+                <li class="next">Effective oveload control</li>
+                <li class="next">Damn good and fast but DX is harder</li>
+                <li class="next"><b>Event Loop</b> is integrated as main engine</li>
             </ul>
         </div>
-        <p class="next" style="margin:1rem;" align="center">CSP и Datastream совместимы друг с другом</p>
+        <p class="next" style="margin:1rem;" align="center">CSP и Datastream are comparable with each other</p>
     </section>
 
     <!-- AND ALSO-->
     <section class="slide">
         <figure>
-            <h2>А также ... </h2>
+            <h2>Аnd also ... </h2>
             <ul>
-                <li>Один из самых быстрых сериализаторов без схемы в мире</li>
-                <li>Сloud : FS, OT, аггрегации логов и async процессинг данных </li>
-                <li>Встроенные средства мониторинга через JMX </li>
-                <li>Интеграция с Zabbix-подобными сервисами </li>
-                <li>Базы данных прямо на DataKernel : <b>LSM OLAP Cube</b></li>
+                <li>One of the fastest schema-less serializers in the world</li>
+                <li>Сloud : FS, OT, logs aggregation и asynchronous data processing</li>
+                <li>Integrated JMX monitoring tools </li>
+                <li>Integration wiht с Zabbix-like services </li>
+                <li>Databases implemented with DataKernel : <b>LSM OLAP Cube</b></li>
             </ul>
         </figure>
     </section>
