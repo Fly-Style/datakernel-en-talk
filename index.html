@@ -427,8 +427,8 @@
         </figure>
     </section>
 
-       <!-- SERVICE GRAPH CODE -->
-       <section class="slide">
+    <!-- SERVICE GRAPH CODE -->
+    <section class="slide">
         <figure>
             <h2>Service Graph</h2>
             <pre>
@@ -467,7 +467,6 @@
             </pre>
         </figure>
     </section>
-
 
     <!-- SERVICE GRAPH PIC -->
     <section class="slide">
@@ -541,6 +540,19 @@
         </figure>
     </section>
 
+    <!-- BYTEBUFFERS -->
+    <section class="slide">
+        <figure>
+            <h2>ByteBuf</h2>
+            <ul>
+                <li>Own GC-friendly implementation of bytebuffers</li>
+                <li class="next">Includes a convenient implementation of the <b>ByteBuffer Pool</b></li>
+                <li class="next">Also <b>ByteBufferQueue</b> for managing multiple buffers.</li>
+                <li class="next">A lot of utility methods to cut, encode, transfuse and other buffer manipulation.</li>
+            </ul>
+        </figure>
+    </section>
+
     <!-- OVERALL -->
     <section class="slide">
         <figure>
@@ -562,19 +574,37 @@
 
     <!-- DATAKERNEL IN ACTION -->
     <section class="slide" id="chapter">
-        <h2 class="shout shrink">DataKernel Tools</h2>
+        <h2 class="shout shrink">Core Services</h2>
     </section>
 
-    <!-- BYTEBUFFERS -->
+    <!-- HTTP OVERALL -->
     <section class="slide">
         <figure>
-            <h2>ByteBuf</h2>
+            <h2>HTTP 1.1</h2>
             <ul>
-                <li>Own GC-friendly implementation of bytebuffers</li>
-                <li class="next">Includes a convenient implementation of the <b>ByteBuffer Pool</b></li>
-                <li class="next">Also <b>ByteBufferQueue</b> for managing multiple buffers.</li>
-                <li class="next">A lot of utility methods to cut, encode, transfuse and other buffer manipulation.</li>
+                <li>Maximum latency with acceptable throughput</li>
+                <li>Both HTTP <b>server</b> and <b>client</b> are available.</li>
+                <li class="next">Sublinear multicore scale, with <b>Workers</b> help</li>
+                <li class="next">Fully asynchronous and nonblocking</li>
+                <li class="next">Highly-optimized request parsing</li>
+                <li class="next">SSL support is present</li>
             </ul>
+            <div class="next" align="center">
+                <p><code style="font-size: 1.7rem;">HTTP benchmark (RPS) : 183434.27 [#/sec] (mean)</code></p>
+            </div>
+        </figure>
+    </section>
+
+    <!-- HTTP FLOW -->
+    <section class="slide">
+        <figure>
+            <h2>HTTP Request handling flow</h2>
+            <figure align="center">
+                <picture>
+                    <img src="pictures/http-request-flow.jpg" style="width:40rem; height:22rem;"
+                        alt="HTTP Request Handling Diagram">
+                </picture>
+            </figure>
         </figure>
     </section>
 
@@ -586,12 +616,53 @@
                 <li>A loooot of services was written with RPC.</li>
                 <li>RPC <b>server</b> and <b>client</b> are available.</li>
                 <li class="next">Support a lot of sending strategies.</li>
-                <li class="next">E.g, <b>sharding</b> or highly-optimized <b>rendezvous hashing</b>.</li>
                 <li class="next">Magnificently fast: up to 15M RPS on one core.</li>
             </ul>
             <div class="next" align="center">
                 <p><code>RPC benchmark : Requests per sercond : 14222727</code></p>
             </div>
+        </figure>
+    </section>
+
+    <!-- RPC Strategies -->
+    <section class="slide">
+        <figure>
+            <h2>RPC</h2>
+            <ul>
+                <li><code>firstValid</code></li>
+                <li><code>firstAvaiable</code></li>
+                <li><code>roundRobin</code></li>
+                <li><code>typeDispatching</code></li>
+                <li><code>sharding</code> with applicable hash function</li>
+                <li>Our glory : well - optimized <code>rendezvousHashing</code></li>
+                </li>
+            </ul>
+        </figure>
+    </section>
+
+    <!-- RPC Example QR -->
+    <section class="slide">
+        <figure>
+            <h2>HTTP Request handling flow</h2>
+            <figure align="center">
+                <picture>
+                    <img src="pictures/rpc-roundrobin-with-two-rendezvous.svg" style="width:40rem; height:22rem;"
+                        alt="HTTP Request Handling Diagram">
+                </picture>
+            </figure>
+        </figure>
+    </section>
+
+    <!-- RPC Example -->
+    <section class="slide">
+        <figure>
+            <h2>HTTP Request handling flow</h2>
+            <figure align="center">
+                <picture>
+                    <img src="pictures/rpc-roundrobin-with-two-rendezvous.svg" style="width:40rem; height:22rem;"
+                        alt="HTTP Request Handling Diagram">
+                </picture>
+            </figure>
         </figure>
     </section>
 
@@ -654,12 +725,12 @@
     <!-- REAL WORLD -->
     <section class="slide">
         <figure>
-            <h2>Реальные успехи DataKernel</h2>
+            <h2>DataKernel : real success</h2>
             <ul>
-                <li>Ворклоад связан с доставкой рекламы на разные страницы</li>
-                <li>И он не упал <b>ни разу</b> за три года</li>
-                <li class="next">Переписав приложение на DataKernel,
-                    мы избавились от проблем с производительностью и масштабируемостью</li>
+                <li>Our workload is ads delivery services</li>
+                <li class="next">He <b>never fell down</b> in three years!!!</li>
+                <li class="next">We have never had a problems with our services after 
+                    transition to DataKernel 3</li>
             </ul>
         </figure>
     </section>
@@ -667,13 +738,11 @@
     <!-- Summary -->
     <section class="slide">
         <figure>
-            <h2>Summary : наш опыт</h2>
+            <h2>Summary</h2>
             <ul>
-                <li>Не бояться экспериментов, когда сроки и бизнес позволяют</li>
-                <li class="next">Связка хорошей CS подготовки с опытом разработки способна сгенерировать достойный
-                    продукт</li>
-                <li class="next">Попробуйте DataKernel, присылайте обратную связь</li>
-                <li class="next"><b>PR are welcomed</b> ☺️</li>
+                <li class="next">Good CS education + experience + finance support = Success</li>
+                <li class="next">Try DataKernel and send us a feedback, please ☺️</li>
+                <li class="next"><b>PR(s) are welcomed</b> ☺️</li>
             </ul>
         </figure>
     </section>
@@ -693,8 +762,8 @@
 
     <section class="slide" id="see-more">
         <h2 class="shout">
-            <p>Спасибо за внимание!</p>
-            <p>Вопросы?</p>
+            <p>Thanks for attention!</p>
+            <p>Q/A?</p>
 
         </h2>
         <style>
